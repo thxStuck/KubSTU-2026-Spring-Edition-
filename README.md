@@ -2,7 +2,7 @@
   <h1 align="center">🏴 KubSTU CTF 2026 Spring Edition — Writeups</h1>
   <p align="center">
     <a href="https://kubstu-ctf.online/">🌐 Платформа</a> · 
-    <a href="https://ctftime.org">🏅 CTFtime</a> · 
+    <a href="https://ctftime.org/event/3177">🏅 CTFtime</a> · 
     <a href="#категории">📂 Категории</a> · 
     <a href="#языки">🌍 Языки</a>
   </p>
