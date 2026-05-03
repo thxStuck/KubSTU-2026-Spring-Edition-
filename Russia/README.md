@@ -1,4 +1,4 @@
-🏴 KubSTU CTF 2026 Spring — Writeups
+# 🏴 KubSTU CTF 2026 Spring — Writeups
 
 > Всего райтапов: **51**
 
@@ -16,3 +16,4 @@
 | ⚡ [PPC](./ppc/) | 1 |
 | 🖼️ [STEGO](./stego/) | 9 |
 | 🌍 [WEB](./web/) | 10 |
+

@@ -1,0 +1,124 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents [4 0 R 5 0 R] /Resources << /Font << /F1 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1820 >>
+stream
+BT
+/F1 24 Tf
+100 820 Td
+(A Brief History of Cryptography) Tj
+ET
+BT
+/F1 12 Tf
+50 780 Td
+(Cryptography - the art of creating and breaking codes - dates back millennia.) Tj
+ET
+BT
+50 760 Td
+(One of the earliest known ciphers is the Caesar cipher, used by Julius Caesar) Tj
+ET
+BT
+50 740 Td
+(around 58 BC to protect military communications.) Tj
+ET
+BT
+50 710 Td
+(The Middle Ages brought more sophisticated ciphers, such as the Vigenere cipher,) Tj
+ET
+BT
+50 695 Td
+(which used a keyword to create polyalphabetic substitution.) Tj
+ET
+BT
+50 665 Td
+(The 20th century revolutionized cryptography with the Enigma machine,) Tj
+ET
+BT
+50 650 Td
+(developed in Germany in the 1920s and used extensively during World War II.) Tj
+ET
+BT
+50 635 Td
+(Alan Turing's work at Bletchley Park was crucial in breaking Enigma) Tj
+ET
+BT
+50 620 Td
+(and contributed significantly to the Allied victory.) Tj
+ET
+BT
+50 590 Td
+(The modern era began with public-key cryptography in the 1970s.) Tj
+ET
+BT
+50 575 Td
+(RSA (Rivest-Shamir-Adleman) became the first practical public-key) Tj
+ET
+BT
+50 560 Td
+(cryptosystem.) Tj
+ET
+BT
+50 530 Td
+(Today, cryptography secures everything from online banking to messengers.) Tj
+ET
+BT
+50 510 Td
+(However, even modern systems have hidden vulnerabilities that require) Tj
+ET
+BT
+50 495 Td
+(deep understanding of cryptographic principles and implementation details.) Tj
+ET
+BT
+50 460 Td
+(The study of cryptography is essential for anyone working in cybersecurity.) Tj
+ET
+BT
+50 435 Td
+(It combines mathematics, computer science, and creative thinking.) Tj
+ET
+BT
+50 405 Td
+(This document contains hidden information that requires technical analysis) Tj
+ET
+BT
+50 390 Td
+(to uncover. Can you find what lies beneath the surface?) Tj
+ET
+BT
+50 360 Td
+(Remember: sometimes the most valuable information is not immediately visible.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 1509 /Filter /FlateDecode >>
+stream
+<~Gat%$gMS6)&:N^l>'U0`6.8h^RGj.,((^akM*\ob1<q0=in.j*fdK2b44Toqcbl`jcmgQJc;*!U;cT`qF1X3Y<:\'J07Que=Zr16^\u*PhOA_iO)?`nBSN,[*8M&'$/dkgn/[%KHA5K$[Pi4()<$h%rI](7lqRh1RGL*DIHL9Sn<j%MJab_lWt=-PeY=VcH]N-8q(]`Ho@kDCAUZeZ]dqs#6K\#qn<j#3KK#=V);nbbq6>(]q_Mf4*Q#?>hN&JdnH%U,jrf=1]&R.o5,6_jYL:bdq=j+E'OF\5?-cQ2#pYJQbEJo\e%^RT_1q7OJj0=l7Ic,knF$qT)Tf`qCQBuYI(6sFY]\U:TQB9m9DSkj)p#`Kg^NsZcrurZgo*3ad5WR>XgFX`Y&B'`^IEG_-,"Wj10#YXI)-=!Qh,j9Wk@EGYR>dNP'-TZr80@,m@_c;`g?&HiV[&V5(\jkq&?bcb26#Y&NN(F&6TH\)_^adFmP2L0A39b\#\depM8a0V9ZF4A;O/uhl4UIS\l]LhkBKC'3Oul(>kr"e[aaDDW&5)]rN)LBXllZMD=U&]Z=2G^(7AIS'+Y\5:,>%Nm[-5Om+X5eEj'p*fChP%:8D=WO;&fmsJWqla*-X8$uhe$=4OGP->nYs.[#HRLC*]>MH]r^/3>RJQ1q[ad`lo[04#4e7'Hpf&Xg$VVXYj@:Kl7e)OYp5E+.A5^k$_<a3UOS4tk1DN]8UlMQ/n:WCCVg*esqS>HF(an9*MFt?pD3D"TjOQKbR&g&[(lS&WnhrlSGo6a]!<9#-?@]_"2[9dD")U_<"btu%onX$NH8,c&.MJ9($n__0n)U-jeHT5'%2E[ta5k2.ECC?U7Sno,F:UW<%*"\F5VK$5IUu\,edbDUncKc/_R3BJHD.A;t@FQ/agm\_iQV*N_,[>X%:&#KM6H7F'dji4g:#!7<_j?=sEdkN=I_9_#69_adfnFlgU<jYRaHkj"?2:)8qU7dG(A?"<p^@&I7&>TdYV-ghXd,7(KVN+MX"loJAUSfs++@p8r"X*;=5s+_rZ')TkBM^<69hhQE`:8eX30V;Kmr53.+`P#9(<["PFZ,=1a:0u1,dgo-5_#h]TOTYV8cPb`o/[#YCm4;l^#bJ$&>W9O73HGWO"A--60a?6e2aD`^X0m?YB&Y6e+(t51k1H/*]J[l\DR(-kuIjQh;Sion1"InkCi'a]^#2>$kRdO.*-lI*#Doe0k2-V\GcF(ZR<,@f<Tj7=Ek@jnL"bVmJ(;$g5dhme,'O+1q2[qeC:edr/HsmWrr%0_at34nZGIiNjJ?2&RH_T:4O&H./4oc1]NP>#b(,RWl92]6<f$mJ9Jc[5iBM9m](=0o'7'r:Bo5dq^*Ur3)3"%(Y*#?+O*QqNmuA?Vg&Lh/K^1r9&+nF`1Tp]?Sp>m.Pet=50=jlg_MAkB>=^4_fZbKEb$Zh=54Sn,$DJmoskiSbojBA(HG4lXu^Z\Iu]<WKu$r*^@$fiMeu=$DlWI'GUBSn9+S-~>
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000249 00000 n 
+0000002121 00000 n 
+0000003703 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3773
+%%EOF
