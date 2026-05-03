@@ -1,98 +1,98 @@
 <p align="center">
   <h1 align="center">🏴 KubSTU CTF 2026 Spring Edition — Writeups</h1>
   <p align="center">
-    <a href="https://kubstu-ctf.online/">🌐 Платформа</a> · 
+    <a href="https://kubstu-ctf.online/">🌐 Platform</a> · 
     <a href="https://ctftime.org/event/3177">🏅 CTFtime</a> · 
-    <a href="#категории">📂 Категории</a> · 
-    <a href="#языки">🌍 Языки</a>
+    <a href="#categories">📂 Categories</a> · 
+    <a href="#languages">🌍 Languages</a>
   </p>
 </p>
 
 ---
 
-## О событии
+## About
 
-**KubSTU CTF** — соревнование по кибербезопасности, организованное **Кубанским государственным технологическим университетом (КубГТУ)** на факультете **Информационных технологий и кибербезопасности (ФИТК)** командой **Capybaras**.
+**KubSTU CTF** is a cybersecurity competition organized by **Kuban State Technological University (KubSTU)**, Faculty of **Information Technology and Cybersecurity (FITK)**, team **Capybaras**.
 
 | | |
 |---|---|
-| **Формат** | Jeopardy CTF, 36 часов |
-| **Даты** | 01 мая 10:00 — 02 мая 22:00 (UTC+3) |
-| **Платформа** | [kubstu-ctf.online](https://kubstu-ctf.online/) |
-| **Организатор** | Команда Capybaras, ФИТК, КубГТУ |
-| **Задач** | 50 |
-| **Категорий** | 7 |
+| **Format** | Jeopardy CTF, 36 hours |
+| **Dates** | May 1, 10:00 — May 2, 22:00 (UTC+3) |
+| **Platform** | [kubstu-ctf.online](https://kubstu-ctf.online/) |
+| **Organizer** | Team Capybaras, FITK, KubSTU |
+| **Challenges** | 50 |
+| **Categories** | 7 |
 
 ---
 
-## Категории
+## Categories
 
-| | Категория | Описание | Задач |
-|---|-----------|----------|:-----:|
-| 🔐 | **Crypto** | Криптография — RSA, AES, хеши, шифры | 8 |
-| 🔍 | **Forensics** | Дампы памяти, логи, восстановление данных | 8 |
-| 🎲 | **Misc** | Кодирование, логика, головоломки | 3 |
-| 🌐 | **Network** | Анализ трафика, сетевые протоколы | 4 |
-| 🕵️ | **OSINT** | Разведка из открытых источников | 8 |
-| ⚡ | **PPC** | Программирование и автоматизация | 1 |
-| 🖼️ | **Stego** | Стеганография — скрытые данные в файлах | 9 |
-| 🌍 | **Web** | SQL-инъекции, XSS, CSRF, Path Traversal | 10 |
+| | Category | Description | Tasks |
+|---|----------|-------------|:-----:|
+| 🔐 | **Crypto** | Cryptography — RSA, AES, hashes, ciphers | 8 |
+| 🔍 | **Forensics** | Memory dumps, logs, data recovery | 8 |
+| 🎲 | **Misc** | Encoding, logic, puzzles | 3 |
+| 🌐 | **Network** | Traffic analysis, network protocols | 4 |
+| 🕵️ | **OSINT** | Open Source Intelligence | 8 |
+| ⚡ | **PPC** | Programming and automation | 1 |
+| 🖼️ | **Stego** | Steganography — hidden data in files | 9 |
+| 🌍 | **Web** | SQL injection, XSS, CSRF, Path Traversal | 10 |
 
 ---
 
-## Языки
+## Languages
 
-Райтапы доступны на трёх языках:
+Writeups are available in three languages:
 
-| Флаг | Папка | Язык | Writeups |
-|:----:|-------|------|:--------:|
+| Flag | Folder | Language | Writeups |
+|:----:|--------|----------|:--------:|
 | 🇷🇺 | [**Russia**](./Russia/) | Русский | 51 |
 | 🇮🇳 | [**India**](./India/) | हिन्दी | 51 |
 | 🇬🇧 | [**English**](./English/) | English | 51 |
 
 ---
 
-## Структура репозитория
+## Repository Structure
 
 ```
 .
 ├── README.md
-├── Russia/                  # 🇷🇺 Русский
-│   ├── README.md            # Оглавление
-│   ├── crypto/              # 8 заданий
-│   ├── forensics/           # 8 заданий
-│   ├── misc/                # 3 задания
-│   ├── network/             # 4 задания
-│   ├── osint/               # 8 заданий
-│   ├── ppc/                 # 1 задание
-│   ├── stego/               # 9 заданий
-│   └── web/                 # 10 заданий
-├── India/                   # 🇮🇳 हिन्दी
-│   └── (аналогичная структура)
+├── Russia/                  # 🇷🇺 Russian
+│   ├── README.md            # Table of contents
+│   ├── crypto/              # 8 challenges
+│   ├── forensics/           # 8 challenges
+│   ├── misc/                # 3 challenges
+│   ├── network/             # 4 challenges
+│   ├── osint/               # 8 challenges
+│   ├── ppc/                 # 1 challenge
+│   ├── stego/               # 9 challenges
+│   └── web/                 # 10 challenges
+├── India/                   # 🇮🇳 Hindi
+│   └── (same structure)
 └── English/                 # 🇬🇧 English
-    └── (аналогичная структура)
+    └── (same structure)
 ```
 
-Каждое задание в отдельной папке:
+Each challenge in its own folder:
 ```
 <category>/<task-name>/
-├── README.md                # Райтап
-├── images/                  # Скриншоты
-└── files/                   # Файлы задания (.pcap, .py, .zip, ...)
+├── README.md                # Writeup
+├── images/                  # Screenshots
+└── files/                   # Challenge files (.pcap, .py, .zip, ...)
 ```
 
 ---
 
-## Правила CTF
+## CTF Rules
 
-- До **5 человек** в команде
-- Запрещены атаки на инфраструктуру
-- Запрещено распространение флагов до окончания
-- Запрещён шеринг решений между командами
+- Up to **5 members** per team
+- Attacking the infrastructure is prohibited
+- Sharing flags before the end is prohibited
+- Sharing solutions between teams is prohibited
 
 ---
 
 <p align="center">
-  <b>Capybaras x КубГТУ</b><br>
+  <b>Capybaras x KubSTU</b><br>
   <a href="https://kubstu-ctf.online/">kubstu-ctf.online</a>
 </p>
