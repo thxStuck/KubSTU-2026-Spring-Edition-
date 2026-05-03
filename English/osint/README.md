@@ -1,14 +1,14 @@
 # 🕵️ OSINT
 
-Challenges in category: **8**
+> KubSTU CTF 2026 Spring — **OSINT** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [49 days](./49-days/) | 📎 1 |
-| 2 | [Bad OpSec](./Bad-OpSec/) | 📎 5 |
-| 3 | [City that doesn't exist](./City-that-doesn't-exist/) | 📎 1 |
-| 4 | [Founder](./Founder/) | 📎 1 |
-| 5 | [Legendary pull](./Legendary-pull/) | 📎 4 |
-| 6 | [Minute of fame](./Minute-of-fame/) | — |
-| 7 | [Morning without coordinates](./Morning-without-coordinates/) | 📎 5 |
-| 8 | [Where is my Faculty?](./Where-is-my-Faculty/) | — |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | 49 days | [Writeup](./49-days/) |
+| 2 | Bad OpSec | [Writeup](./Bad-OpSec/) |
+| 3 | City that doesn't exist | [Writeup](./City-that-doesn't-exist/) |
+| 4 | Founder | [Writeup](./Founder/) |
+| 5 | Legendary pull | [Writeup](./Legendary-pull/) |
+| 6 | Minute of fame | [Writeup](./Minute-of-fame/) |
+| 7 | Morning without coordinates | [Writeup](./Morning-without-coordinates/) |
+| 8 | Where is my Faculty%3F | [Writeup](./Where-is-my-Faculty/) |

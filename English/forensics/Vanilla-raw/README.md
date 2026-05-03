@@ -3,36 +3,48 @@
 > **Category:** `forensics`  
 > **CTF:** KubSTU CTF 2026 Spring
 
-<details>
-<summary>📎 Challenge files</summary>
-
-| File | Type |
-|------|-----|
-| [memory.rar](./files/img_11.rar) | `rar` |
-
-</details>
-
 ---
 
-We received a memory dump, but for some reason we can't analyze it — help us.
+We received a RAM dump, but for some reason we can't analyze it — help us out.
 
-Analyzing with strings gives us nothing. Grep by pattern also yields nothing. Although the dump is 2 GB, so there must be something.
-When analyzing the entropy and hex dump, we see:
+[memory.rar](./files/memory.rar)
 
-![image.png](./images/img_1.png)
+Strings analysis gives us nothing. Grep by pattern also yields nothing. Although the dump is 2 GB, so there must be something in there.
+When analyzing entropy and the hex dump, we see:
 
-We conclude that most of the memory is zeros, but there are non-zero values. We look for their position. We craft a script that triggers on the first non-zero byte.
 
-## Investigating the environment
+ ![img_1.png](./images/img_1.png)
 
-At first glance this gives us nothing, but you can notice a possible 4-byte offset. We know the pattern KubSTU{…}. Searching by pattern apparently makes no sense, so we need to look character by character. We look for the character K.
 
-We see this character is present at several offsets. We examine all of them and notice that at a certain offset the flag pattern starts to emerge.
 
-We create a script that extracts the flag completely.
+ ![img_2.png](./images/img_2.png)
 
-## 🚩 Flag
+We conclude that most of the memory is zeros, but there are non-zero values. Let's find their positions. We craft a script that will trigger on the first non-zero byte.
 
-```
+
+ ![img_3.png](./images/img_3.png)
+
+Let's examine the surrounding area.
+
+ ![img_4.png](./images/img_4.png)
+
+At first glance this doesn't give us anything, but we can notice a possible 4-byte offset. We know the pattern KubSTU{…}. Searching by pattern apparently doesn't make sense, so we need to look character by character. Let's look for the character K.
+
+ ![img_5.png](./images/img_5.png)
+
+We see that this character is present at several offsets. Let's examine all of them, and at a certain offset the flag pattern starts to emerge.
+
+ ![img_6.png](./images/img_6.png)
+
+Let's create a script that will fully extract the flag.
+
+
+ ![img_7.png](./images/img_7.png)
+
+Flag: 
+
+```javascript
 KubSTU{m3m0ry_unl1nk3d_tmpfs_f0r3ns1cs}
 ```
+
+

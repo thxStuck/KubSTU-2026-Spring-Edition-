@@ -1,7 +1,7 @@
 # ⚡ PPC
 
-Challenges in category: **1**
+> KubSTU CTF 2026 Spring — **PPC** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Mobile Waf](./Mobile-Waf/) | 📎 3 |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Mobile Waf | [Writeup](./Mobile-Waf/) |

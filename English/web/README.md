@@ -1,16 +1,16 @@
-# 🌍 WEB
+# 🌍 Web
 
-Challenges in category: **10**
+> KubSTU CTF 2026 Spring — **Web** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Bank 1](./Bank-1/) | — |
-| 2 | [Bank 2](./Bank-2/) | — |
-| 3 | [CapyAgro Crop Rescue](./CapyAgro-Crop-Rescue/) | 📎 10 |
-| 4 | [Capybara Admin Portal](./Capybara-Admin-Portal/) | 📎 1 |
-| 5 | [CapyBlog](./CapyBlog/) | 📎 3 |
-| 6 | [Deadlock](./Deadlock/) | — |
-| 7 | [HR portal](./HR-portal/) | 📎 8 |
-| 8 | [MCPocalypse](./MCPocalypse/) | 📎 1 |
-| 9 | [The Battle of the Strongest](./The-Battle-of-the-Strongest/) | 📎 13 |
-| 10 | [Библиотека Капиба-Сити](./Библиотека-Капиба-Сити/) | — |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Bank 1 | [Writeup](./Bank-1/) |
+| 2 | Bank 2 | [Writeup](./Bank-2/) |
+| 3 | CapyAgro Crop Rescue | [Writeup](./CapyAgro-Crop-Rescue/) |
+| 4 | CapyBlog | [Writeup](./CapyBlog/) |
+| 5 | Capybara Admin Portal | [Writeup](./Capybara-Admin-Portal/) |
+| 6 | Deadlock | [Writeup](./Deadlock/) |
+| 7 | HR portal | [Writeup](./HR-portal/) |
+| 8 | MCPocalypse | [Writeup](./MCPocalypse/) |
+| 9 | The Battle of the Strongest | [Writeup](./The-Battle-of-the-Strongest/) |
+| 10 | Capiba-City Library | [Writeup](./Библиотека-Капиба-Сити/) |

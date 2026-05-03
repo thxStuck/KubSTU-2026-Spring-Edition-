@@ -1,14 +1,14 @@
-# 🔍 FORENSICS
+# 🔍 Forensics
 
-Challenges in category: **8**
+> KubSTU CTF 2026 Spring — **Forensics** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Demo](./Demo/) | 📎 3 |
-| 2 | [Is the report in English?](./Is-the-report-in-English/) | 📎 4 |
-| 3 | [Mutant](./Mutant/) | 📎 8 |
-| 4 | [Ratte](./Ratte/) | 📎 5 |
-| 5 | [Tunnel?](./Tunnel/) | 📎 1 |
-| 6 | [Vanilla raw](./Vanilla-raw/) | 📎 11 |
-| 7 | [We have an incident!](./We-have-an-incident!/) | 📎 22 |
-| 8 | [WirePass](./WirePass/) | 📎 1 |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Demo | [Writeup](./Demo/) |
+| 2 | Is the report in English%3F | [Writeup](./Is-the-report-in-English/) |
+| 3 | Mutant | [Writeup](./Mutant/) |
+| 4 | Ratte | [Writeup](./Ratte/) |
+| 5 | Tunnel | [Writeup](./Tunnel/) |
+| 6 | Vanilla raw | [Writeup](./Vanilla-raw/) |
+| 7 | We have an incident! | [Writeup](./We-have-an-incident!/) |
+| 8 | WirePass | [Writeup](./WirePass/) |

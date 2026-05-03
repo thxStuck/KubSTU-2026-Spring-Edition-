@@ -3,17 +3,34 @@
 > **Category:** `stego`  
 > **CTF:** KubSTU CTF 2026 Spring
 
----
+                   
 
-Beautiful drawing. Drew it myself 😊
+A beautiful drawing. Drew it myself 😊
 
-![image.png](./images/img_1.png)
+     
 
-Writeup:
+ ![img_1.bmp](./images/img_1.bmp)
 
-The archive contains two files: one with an image and a second .pkt file that contains hints for the stego file key.
+                   
+
+Writeup.
+
+  
+
+The archive contains two files — one with an image and a second .pkt file with hints for the stego file key.
+
+  
 
 Alternative approach: find the original image online and get the key — Mirage
-https://www.artstation.com/artwork/g8yZvQ?utm_medium=organic&utm_source=yandexsmartcamera
 
-![cooper-roberts-mirage.jpg](./images/img_2.jpg)
+<https://www.artstation.com/artwork/g8yZvQ?utm_medium=organic&utm_source=yandexsmartcamera>
+
+    
+
+ ![img_2.jpg](./images/img_2.jpg)
+
+ 
+
+ ![img_3.png](./images/img_3.png)
+
+

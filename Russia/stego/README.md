@@ -1,16 +1,15 @@
-# 🖼️ STEGO
+# 🖼️ Stego
 
-Заданий в категории: **9**
+> KubSTU CTF 2026 Spring — категория **Stego**
 
-| # | Задание | Файлы |
-|---|---------|-------|
-| 1 | [bembembem](./bembembem/) | 📎 2 |
-| 2 | [Capybara in Nightmare Land](./Capybara-in-Nightmare-Land/) | — |
-| 3 | [Capybara Secret](./Capybara-Secret/) | — |
-| 4 | [Hidden Glyphs](./Hidden-Glyphs/) | — |
-| 5 | [Krasnodar tram](./Krasnodar-tram/) | 📎 5 |
-| 6 | [Meow Message](./Meow-Message/) | — |
-| 7 | [The Ancient Note](./The-Ancient-Note/) | — |
-| 8 | [The Gaze of Serenity](./The-Gaze-of-Serenity/) | 📎 7 |
-| 9 | [Vanishing act](./Vanishing-act/) | 📎 3 |
-
+| # | Задание | Ссылка |
+|---|---------|--------|
+| 1 | Capybara Secret | [Райтап](./Capybara-Secret/) |
+| 2 | Capybara in Nightmare Land | [Райтап](./Capybara-in-Nightmare-Land/) |
+| 3 | Hidden Glyphs | [Райтап](./Hidden-Glyphs/) |
+| 4 | Krasnodar tram | [Райтап](./Krasnodar-tram/) |
+| 5 | Meow Message | [Райтап](./Meow-Message/) |
+| 6 | The Ancient Note | [Райтап](./The-Ancient-Note/) |
+| 7 | The Gaze of Serenity | [Райтап](./The-Gaze-of-Serenity/) |
+| 8 | Vanishing act | [Райтап](./Vanishing-act/) |
+| 9 | bembembem | [Райтап](./bembembem/) |

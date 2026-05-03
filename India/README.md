@@ -1,19 +1,14 @@
-# 🏴 KubSTU CTF 2026 Spring — Writeups
+# 🇮🇳 KubSTU CTF 2026 Spring — राइटअप
 
-> कुल राइटअप: **51**
+| | श्रेणी | चुनौतियाँ |
+|---|----------|:-------:|
+| 🔐 | [Crypto](./crypto/) | 8 |
+| 🔍 | [Forensics](./forensics/) | 8 |
+| 🎲 | [Misc](./misc/) | 3 |
+| 🌐 | [Network](./network/) | 4 |
+| 🕵️ | [OSINT](./osint/) | 8 |
+| ⚡ | [PPC](./ppc/) | 1 |
+| 🖼️ | [Stego](./stego/) | 9 |
+| 🌍 | [Web](./web/) | 10 |
 
----
-
-## श्रेणियाँ
-
-| श्रेणी | चुनौतियों की संख्या |
-|-----------|:--------------:|
-| 🔐 [CRYPTO](./crypto/) | 8 |
-| 🔍 [FORENSICS](./forensics/) | 8 |
-| 🎲 [MISC](./misc/) | 3 |
-| 🌐 [NETWORK](./network/) | 4 |
-| 🕵️ [OSINT](./osint/) | 8 |
-| ⚡ [PPC](./ppc/) | 1 |
-| 🖼️ [STEGO](./stego/) | 9 |
-| 🌍 [WEB](./web/) | 10 |
-
+**कुल:** 51 चुनौतियाँ

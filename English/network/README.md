@@ -1,10 +1,10 @@
-# 🌐 NETWORK
+# 🌐 Network
 
-Challenges in category: **4**
+> KubSTU CTF 2026 Spring — **Network** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Nut legends](./Nut-legends/) | 📎 4 |
-| 2 | [Revenge of the System Administrator](./Revenge-of-the-System-Administrator/) | 📎 1 |
-| 3 | [Silence in Verona](./Silence-in-Verona/) | 📎 1 |
-| 4 | [The skeleton key](./The-skeleton-key/) | 📎 3 |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Nut legends | [Writeup](./Nut-legends/) |
+| 2 | Revenge of the System Administrator | [Writeup](./Revenge-of-the-System-Administrator/) |
+| 3 | Silence in Verona | [Writeup](./Silence-in-Verona/) |
+| 4 | The skeleton key | [Writeup](./The-skeleton-key/) |

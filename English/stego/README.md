@@ -1,15 +1,15 @@
-# 🖼️ STEGO
+# 🖼️ Stego
 
-Challenges in category: **9**
+> KubSTU CTF 2026 Spring — **Stego** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [bembembem](./bembembem/) | 📎 2 |
-| 2 | [Capybara in Nightmare Land](./Capybara-in-Nightmare-Land/) | — |
-| 3 | [Capybara Secret](./Capybara-Secret/) | — |
-| 4 | [Hidden Glyphs](./Hidden-Glyphs/) | — |
-| 5 | [Krasnodar tram](./Krasnodar-tram/) | 📎 5 |
-| 6 | [Meow Message](./Meow-Message/) | — |
-| 7 | [The Ancient Note](./The-Ancient-Note/) | — |
-| 8 | [The Gaze of Serenity](./The-Gaze-of-Serenity/) | 📎 7 |
-| 9 | [Vanishing act](./Vanishing-act/) | 📎 3 |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Capybara Secret | [Writeup](./Capybara-Secret/) |
+| 2 | Capybara in Nightmare Land | [Writeup](./Capybara-in-Nightmare-Land/) |
+| 3 | Hidden Glyphs | [Writeup](./Hidden-Glyphs/) |
+| 4 | Krasnodar tram | [Writeup](./Krasnodar-tram/) |
+| 5 | Meow Message | [Writeup](./Meow-Message/) |
+| 6 | The Ancient Note | [Writeup](./The-Ancient-Note/) |
+| 7 | The Gaze of Serenity | [Writeup](./The-Gaze-of-Serenity/) |
+| 8 | Vanishing act | [Writeup](./Vanishing-act/) |
+| 9 | bembembem | [Writeup](./bembembem/) |

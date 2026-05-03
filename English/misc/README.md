@@ -1,9 +1,9 @@
-# 🎲 MISC
+# 🎲 Misc
 
-Challenges in category: **3**
+> KubSTU CTF 2026 Spring — **Misc** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Bank 3](./Bank-3/) | — |
-| 2 | [Sugar](./Sugar/) | 📎 5 |
-| 3 | [Краснодарское ключехранилище](./Краснодарское-ключехранилище/) | — |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Bank 3 | [Writeup](./Bank-3/) |
+| 2 | Sugar | [Writeup](./Sugar/) |
+| 3 | Краснодарское ключехранилище | [Writeup](./Краснодарское-ключехранилище/) |

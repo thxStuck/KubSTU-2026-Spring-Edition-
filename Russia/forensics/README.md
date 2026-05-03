@@ -1,15 +1,14 @@
-# 🔍 FORENSICS
+# 🔍 Forensics
 
-Заданий в категории: **8**
+> KubSTU CTF 2026 Spring — категория **Forensics**
 
-| # | Задание | Файлы |
-|---|---------|-------|
-| 1 | [Demo](./Demo/) | 📎 3 |
-| 2 | [Is the report in English?](./Is-the-report-in-English/) | 📎 4 |
-| 3 | [Mutant](./Mutant/) | 📎 8 |
-| 4 | [Ratte](./Ratte/) | 📎 5 |
-| 5 | [Tunnel?](./Tunnel/) | 📎 1 |
-| 6 | [Vanilla raw](./Vanilla-raw/) | 📎 11 |
-| 7 | [We have an incident!](./We-have-an-incident!/) | 📎 22 |
-| 8 | [WirePass](./WirePass/) | 📎 1 |
-
+| # | Задание | Ссылка |
+|---|---------|--------|
+| 1 | Demo | [Райтап](./Demo/) |
+| 2 | Is the report in English%3F | [Райтап](./Is-the-report-in-English/) |
+| 3 | Mutant | [Райтап](./Mutant/) |
+| 4 | Ratte | [Райтап](./Ratte/) |
+| 5 | Tunnel | [Райтап](./Tunnel/) |
+| 6 | Vanilla raw | [Райтап](./Vanilla-raw/) |
+| 7 | We have an incident! | [Райтап](./We-have-an-incident!/) |
+| 8 | WirePass | [Райтап](./WirePass/) |

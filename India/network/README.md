@@ -1,11 +1,10 @@
-# 🌐 NETWORK
+# 🌐 Network
 
-श्रेणी में चुनौतियाँ: **4**
+> KubSTU CTF 2026 Spring — श्रेणी **Network**
 
-| # | चुनौती | फ़ाइलें |
-|---|---------|-------|
-| 1 | [Nut legends](./Nut-legends/) | 📎 4 |
-| 2 | [Revenge of the System Administrator](./Revenge-of-the-System-Administrator/) | 📎 1 |
-| 3 | [Silence in Verona](./Silence-in-Verona/) | 📎 1 |
-| 4 | [The skeleton key](./The-skeleton-key/) | 📎 3 |
-
+| # | चुनौती | लिंक |
+|---|---------|--------|
+| 1 | Nut legends | [राइटअप](./Nut-legends/) |
+| 2 | Revenge of the System Administrator | [राइटअप](./Revenge-of-the-System-Administrator/) |
+| 3 | Silence in Verona | [राइटअप](./Silence-in-Verona/) |
+| 4 | The skeleton key | [राइटअप](./The-skeleton-key/) |

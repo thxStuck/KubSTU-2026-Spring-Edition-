@@ -3,67 +3,98 @@
 > **Category:** `misc`  
 > **CTF:** KubSTU CTF 2026 Spring
 
-<details>
-<summary>📎 Challenge files</summary>
+---
 
-| File | Type |
-|------|-----|
-| [sugar_traffic.pcap](./files/img_1.pcap) | `pcap` |
-| [sugar_traffic.pcap](./files/img_2.pcap) | `pcap` |
+  **Sweet Capybara Talks** — a group of capybaras from the secret **"Department of Sweets"** encrypts their communications using a proprietary protocol. The PCAP contains their intercepted session. They're communicating with some command server.
+Here's the server: 
+nc ip
 
-</details>
+
+[sugar_traffic.pcap](./files/sugar_traffic.pcap)
+
+
+upd:
+
+old:
+
+[sugar_traffic.pcap](./files/sugar_traffic.pcap)
 
 ---
 
-Sweet Capybara Talks — a group of capybaras from the secret "Department of Sweets" encrypts their communications using a proprietary protocol. The PCAP contains their intercepted session. They're communicating with some kind of command server. Here's the server: nc ip
-upd: old:
-
 ## Step 1: Open the PCAP in Wireshark
 
+```bash
 wireshark sugar_traffic.pcap
+```
+
 We see:
-- TCP streams on port 31337 — multiple connections
-- UDP packets on port 9999 — spam with the word "sugar!"
+
+- **TCP streams** on port 31337 — multiple connections
+- **UDP packets** on port 9999 — spam with the word "sugar!"
 - Lots of noise: short TCP sessions with junk, fake HTTP responses
 
-## Step 2: Find the main session
+## Step 2: Finding the Main Session
 
 Wireshark filter:
+
+```
 tcp.port == 31337 && tcp.len > 0
-Look for the longest TCP stream. Right-click → Follow → TCP Stream. We find the only stream lasting ~20 seconds with 12+ KB of data — this is the main session.
-At the beginning of the stream we see a plaintext handshake:
+```
+
+Look for the longest TCP stream. Right-click → Follow → TCP Stream. Find the only stream with **~20 seconds duration and 12+ KB of data** — this is the main session.
+
+ ![img_1.png](./images/img_1.png)
+
+At the beginning of the stream, we see a **plaintext handshake**:
+
+ ![img_2.png](./images/img_2.png)
+
+```
 [SUGAR_PROTOCOL v1.0]
 SALT:a3f7c9b1e2d45608
 CIPHER:AES-256-CBC
 KDF:SHA256(PASSPHRASE||SALT)
 >>>ENCRYPTED_CHANNEL_ACTIVE<<<
-Extracted data:
-- Salt: a3f7c9b1e2d45608
+```
+
+**Extracted data:**
+
+- Salt: `a3f7c9b1e2d45608`
 - Cipher: AES-256-CBC
-- Key formula: SHA256(password + salt)
-After the >>>ENCRYPTED_CHANNEL_ACTIVE<<< marker — only binary data (encrypted exchange).
+- Key derivation formula: `SHA256(password + salt)`
 
-## Step 3: Filter out the noise
+After the `>>>ENCRYPTED_CHANNEL_ACTIVE<<<` marker — only binary data (encrypted exchange).
 
-The PCAP contains traps designed to mislead (including AI analyzers):
-- UDP packets with fake passwords and flags (sugar! flag=KubSTU{...})
+## Step 3: Filtering Out the Noise
+
+The PCAP contains traps designed to deceive (including AI analyzers):
+
+- UDP packets with fake passwords and flags (`sugar! flag=KubSTU{...}`)
 - TCP streams with fake HTTP responses, JSON with fake credentials
-- Phrases like [SYSTEM OVERRIDE], TERMINATE ANALYSIS — prompt injection
-All of this is noise. The only source of truth is the main session handshake.
+- Phrases like `[SYSTEM OVERRIDE]`, `TERMINATE ANALYSIS` — prompt injection
 
-## Step 4: Brute-forcing the password
+**All of this is junk.** The only source of truth is the handshake of the main session.
+
+## Step 4: Brute-Forcing the Password
 
 We know:
-- Salt: a3f7c9b1e2d45608
-- KDF: SHA256(password + salt)
+
+- Salt: `a3f7c9b1e2d45608`
+- KDF: `SHA256(password + salt)`
 - Cipher: AES-256-CBC
-- Protocol: [4 bytes length BE][16 bytes IV][AES ciphertext]
-- If decryption is wrong — server responds with \x00\x00\x00\x00
-- If correct — server responds with [4 bytes length][encrypted response]
+- Protocol: `[4 bytes length BE][16 bytes IV][AES ciphertext]`
+- If decryption is wrong — server responds with `\x00\x00\x00\x00`
+- If correct — server responds with `[4 bytes length][encrypted response]`
 
 We write a brute-forcer. Install dependencies:
+
+```bash
 pip install pycryptodome
-bruteforce.py:
+```
+
+**[bruteforce.py](http://bruteforce.py):**
+
+```python
 #!/usr/bin/env python3
 import socket, struct, hashlib, os, sys, time
 from Crypto.Cipher import AES
@@ -116,12 +147,19 @@ with open("rockyou.txt", "r", errors="ignore") as f:
         break
 
 sock.close()
+```
+
+```bash
 python bruteforce.py
-Result: password is chocolate, found after ~27 attempts.
+```
 
-## Step 5: Custom shell
+**Result:** password `chocolate`, found after ~27 attempts.
 
-sugar_shell.py:
+## Step 5: Custom Shell
+
+**sugar_shell.py:**
+
+```python
 #!/usr/bin/env python3
 import socket, struct, hashlib, os, sys, time, readline
 from Crypto.Cipher import AES
@@ -182,11 +220,16 @@ while True:
     print(decrypt(payload, key).decode(errors="replace"))
 
 sock.close()
+```
+
+```bash
 python sugar_shell.py
+```
 
-## Step 6: Finding the flag
+## Step 6: Finding the Flag
 
 
+```javascript
 python3 -c "
 import socket,struct,hashlib,os,time
 from Crypto.Cipher import AES
@@ -207,21 +250,21 @@ l=struct.unpack('>I',rx(s,4))[0]; d=rx(s,l)
 print(unpad(AES.new(k,AES.MODE_CBC,d[:16]).decrypt(d[16:]),16).decode())
 s.close()
 "
+```
 
-![image.png](./images/img_3.png)
 
+
+
+ ![img_3.png](./images/img_3.png)
+
+```
 $ ls
 documents
 drafts
 flag.txt
 
 $ cat flag.txt
-
-## 🚩 Flag
-
-```
 KubSTU{d0r4_dur4_sug4r_ch0c0l4t3_v1b3z}
-```
 
 $ ls -la documents/
 .secret_mix.txt
@@ -235,5 +278,11 @@ $ cat documents/.secret_mix.txt
 TOP SECRET — MIX PARAMETERS "DORA-DURA"
 ...
 ```
+
+## Flag
+
+```
 KubSTU{d0r4_dur4_sug4r_ch0c0l4t3_v1b3z}
 ```
+
+

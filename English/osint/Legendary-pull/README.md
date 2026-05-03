@@ -3,61 +3,93 @@
 > **Category:** `osint`  
 > **CTF:** KubSTU CTF 2026 Spring
 
-<details>
-<summary>📎 Challenge files</summary>
+Difficulty: hard
 
-| File | Type |
-|------|-----|
-| [Passo Campalto Orlanda_Хадыжи _И.mp4](./files/img_3.mp4) | `video/mp4` |
 
-</details>
+I have too many questions about this situation and no answers. Find the message of the Kuban tourist.
+
+ ![img_1.png](./images/img_1.png)
 
 ---
 
-Difficulty: hard
+### 1. Initial Visual Analysis
 
-I have too many questions about this situation and no answers. Find the message from the Kuban tourist.
+ 
 
-1. Initial visual analysis
+First, we analyze the photo itself:
 
-First, we analyze the photograph itself:
-- building architecture,
+- house architecture,
 - neat fences and landscaping,
 - road markings,
 - style of urban infrastructure,
 - appearance of the bus stop.
 
-Based on the combination of features, the location doesn't look like Krasnodar, or Russia in general. This immediately suggests that the Khadyzhenskoye beer sticker is not pointing to the country, but is simply a meme.
+ 
 
-The most noticeable clue in the photo is the round "Khadyzhenskoye" sticker.
+Based on the combination of features, the location looks **not like Krasnodar** and generally **not like Russia**.
+ This immediately suggests that the sticker with Khadyzhenskoe beer is **not an indication of the country**, but simply a meme.
 
-2. Determining the likely country
+ 
+
+The most noticeable clue in the photo is precisely the round **"Khadyzhenskoe"** sticker.
+
+ 
+
+---
+
+### 2. Determining the Likely Country of the Photo
+
+ 
 
 To avoid guessing blindly, you can:
+
 - upload the photo to a visual neural network / image recognition,
 - use reverse image / visual search,
 - ask a model to determine the most likely country based on architecture and infrastructure.
 
-The prompt I used: "find all possible geo-references and determine the country/city where the photo was taken"
 
-The most plausible result — Italy.
+*The prompt I used: "find all possible geo-references and determine the country/city where the photo was taken"*
 
-After this, we have two main clues:
-- Khadyzhenskoye beer
-- Italy as the likely country
 
-3. Analyzing the challenge name
+The most plausible result is **Italy**.
 
-The task name is Mythical Pull.
+ 
 
-There's a reference here to the popular meme/reels format "Reel Pull", where "pull" means "rare find", "unexpected catch", "strange drop", often with absurd or very niche content.
+So now we have **two main clues**:
 
-So the hint is not just about photo geolocation, but that this is a frame from a reel that can be found by association.
+1. **Khadyzhenskoe beer**
+2. **Italy** as the likely country of the photo
 
-4. Keyword search
+ 
 
-Next, we search not for the street itself, but for content related to this phenomenon.
+---
+
+### 3. Analyzing the Challenge Title
+
+ 
+
+The task name is **Mythical Pull**.
+
+ 
+
+This is a reference to the popular meme/Reels format called **"Reel Pull"**, where "pull" means "rare find", "unexpected catch", "weird drop", often featuring absurd or very niche content.
+
+ 
+
+In other words, the hint here isn't just about geolocating a photo, but that **this is a frame from a Reel** that can be found by association.
+
+ 
+
+---
+
+### 4. Keyword Search
+
+ 
+
+Next, we start searching not for the street itself, but for **content** related to this phenomenon.
+
 Useful queries:
+
 - Хадыженское Италия
 - Хадыжи Италия
 - Хадыженское в Италии
@@ -66,47 +98,79 @@ Useful queries:
 - Hadizhenskoe Italy meme
 - Italian bus stop Khadyzhenskoe
 
+ 
+
 It makes sense to search:
+
 - on Google,
 - on Instagram,
 - on TikTok,
-- using both English and Russian variants.
+- in both English and Russian variants.
 
-5. Finding the original video
+ 
 
-If the search is done correctly, it leads to an Instagram Reel:
-Source: https://www.instagram.com/reel/DV9U0fZkSnG/
+---
 
-In this video, the author shows the exact location and explains where the pole with the sticker is.
+### 5. Finding the Original Video
 
-6. Determining the exact location
+ 
 
-From the reel, we get the point:
-Bus stop Passo Campalto Orlanda
+If the search is done correctly, it leads to Instagram Reels:
 
-Then:
-- open it on a map,
-- compare the surroundings with the photo,
-- confirm that:
-  - the pole shape matches,
-  - there's a bus shelter nearby,
-  - the road surroundings and buildings visually match.
+**Source:**
+ https://www.instagram.com/reel/DV9U0fZkSnG/
 
-7. Getting the flag
+[uploads/6d8404be-e3e6-431d-bbd2-9cbb195bd0f8/ce980d6e-0a1f-463c-bf22-35919e59d65a/Passo%20Campalto%20Orlanda_%D0%A5%D0%B0%D0%B4%D1%8B%D0%B6%D0%B8%20_%D0%98.mp4](video:uploads/6d8404be-e3e6-431d-bbd2-9cbb195bd0f8/ce980d6e-0a1f-463c-bf22-35919e59d65a/Passo%20Campalto%20Orlanda_%D0%A5%D0%B0%D0%B4%D1%8B%D0%B6%D0%B8%20_%D0%98.mp4 "05d858ae5f56:video/mp4:1:")
+
+In this video, the author shows the very same location and explains **where the pole with the sticker is located**.
+
+ 
+
+---
+
+### 6. Pinpointing the Exact Location
+
+ 
+
+From the video, we get the location:
+
+**Bus stop Passo Campalto Orlanda**
+
+ 
+
+Next:
+
+1. open it on the map,
+2. compare the surroundings with the photo,
+3. confirm that:
+   - the pole shape matches,
+   - there's a bus shelter nearby,
+   - the road surroundings and buildings visually match.
+
+ 
+
+---
+
+### 7. Getting the Flag
+
+ 
 
 After confirming the location, we go further:
-- open the stop / POI on maps,
-- check comments / reviews / photos,
-- the flag is found there.
 
-![image.png](./images/img_1.png)
+- open the **stop / POI** on maps,
+- check **comments / reviews / photos**,
+- there we find the **flag**.
 
-Format per the challenge:
+  
 
-## 🚩 Flag
+ ![img_2.png](./images/img_2.png)
 
-```
-KubSTU{Dr1nk_r35p0n51bly_t0_4v01d_w4k1n_up_4br04d}
-```
 
-![image.png](./images/img_2.png)
+Format per the problem statement:
+
+`KubSTU{Dr1nk_r35p0n51bly_t0_4v01d_w4k1n_up_4br04d}`
+
+
+  
+
+

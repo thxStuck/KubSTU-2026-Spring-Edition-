@@ -1,17 +1,16 @@
-# 🌍 WEB
+# 🌍 Web
 
-श्रेणी में चुनौतियाँ: **10**
+> KubSTU CTF 2026 Spring — श्रेणी **Web**
 
-| # | चुनौती | फ़ाइलें |
-|---|---------|-------|
-| 1 | [Bank 1](./Bank-1/) | — |
-| 2 | [Bank 2](./Bank-2/) | — |
-| 3 | [CapyAgro Crop Rescue](./CapyAgro-Crop-Rescue/) | 📎 10 |
-| 4 | [Capybara Admin Portal](./Capybara-Admin-Portal/) | 📎 1 |
-| 5 | [CapyBlog](./CapyBlog/) | 📎 3 |
-| 6 | [Deadlock](./Deadlock/) | — |
-| 7 | [HR portal](./HR-portal/) | 📎 8 |
-| 8 | [MCPocalypse](./MCPocalypse/) | 📎 1 |
-| 9 | [The Battle of the Strongest](./The-Battle-of-the-Strongest/) | 📎 13 |
-| 10 | [Библиотека Капиба-Сити](./Библиотека-Капиба-Сити/) | — |
-
+| # | चुनौती | लिंक |
+|---|---------|--------|
+| 1 | Bank 1 | [राइटअप](./Bank-1/) |
+| 2 | Bank 2 | [राइटअप](./Bank-2/) |
+| 3 | CapyAgro Crop Rescue | [राइटअप](./CapyAgro-Crop-Rescue/) |
+| 4 | CapyBlog | [राइटअप](./CapyBlog/) |
+| 5 | Capybara Admin Portal | [राइटअप](./Capybara-Admin-Portal/) |
+| 6 | Deadlock | [राइटअप](./Deadlock/) |
+| 7 | HR portal | [राइटअप](./HR-portal/) |
+| 8 | MCPocalypse | [राइटअप](./MCPocalypse/) |
+| 9 | The Battle of the Strongest | [राइटअप](./The-Battle-of-the-Strongest/) |
+| 10 | Библиотека Капиба-Сити | [राइटअप](./Библиотека-Капиба-Сити/) |

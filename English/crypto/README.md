@@ -1,14 +1,14 @@
-# 🔐 CRYPTO
+# 🔐 Crypto
 
-Challenges in category: **8**
+> KubSTU CTF 2026 Spring — **Crypto** category
 
-| # | Challenge | Files |
-|---|---------|-------|
-| 1 | [Base](./Base/) | 📎 5 |
-| 2 | [Cat-girl conspiracy](./Cat-girl-conspiracy/) | 📎 9 |
-| 3 | [Furry Cipher](./Furry-Cipher/) | 📎 17 |
-| 4 | [Nintendo 3DS](./Nintendo-3DS/) | 📎 4 |
-| 5 | [Not enough part 1](./Not-enough-part-1/) | 📎 9 |
-| 6 | [Not enough part 2](./Not-enough-part-2/) | 📎 15 |
-| 7 | [Strange sequence of numbers](./Strange-sequence-of-numbers/) | 📎 4 |
-| 8 | [Unlucky 13](./Unlucky-13/) | 📎 5 |
+| # | Challenge | Link |
+|---|---------|--------|
+| 1 | Base | [Writeup](./Base/) |
+| 2 | Cat-girl conspiracy | [Writeup](./Cat-girl-conspiracy/) |
+| 3 | Furry Cipher | [Writeup](./Furry-Cipher/) |
+| 4 | Nintendo 3DS | [Writeup](./Nintendo-3DS/) |
+| 5 | Not enough part 1 | [Writeup](./Not-enough-part-1/) |
+| 6 | Not enough part 2 | [Writeup](./Not-enough-part-2/) |
+| 7 | Strange sequence of numbers | [Writeup](./Strange-sequence-of-numbers/) |
+| 8 | Unlucky 13 | [Writeup](./Unlucky-13/) |

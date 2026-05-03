@@ -1,15 +1,14 @@
 # 🕵️ OSINT
 
-Заданий в категории: **8**
+> KubSTU CTF 2026 Spring — категория **OSINT**
 
-| # | Задание | Файлы |
-|---|---------|-------|
-| 1 | [49 days](./49-days/) | 📎 1 |
-| 2 | [Bad OpSec](./Bad-OpSec/) | 📎 5 |
-| 3 | [City that doesn't exist](./City-that-doesn't-exist/) | 📎 1 |
-| 4 | [Founder](./Founder/) | 📎 1 |
-| 5 | [Legendary pull](./Legendary-pull/) | 📎 4 |
-| 6 | [Minute of fame](./Minute-of-fame/) | — |
-| 7 | [Morning without coordinates](./Morning-without-coordinates/) | 📎 5 |
-| 8 | [Where is my Faculty?](./Where-is-my-Faculty/) | — |
-
+| # | Задание | Ссылка |
+|---|---------|--------|
+| 1 | 49 days | [Райтап](./49-days/) |
+| 2 | Bad OpSec | [Райтап](./Bad-OpSec/) |
+| 3 | City that doesn't exist | [Райтап](./City-that-doesn't-exist/) |
+| 4 | Founder | [Райтап](./Founder/) |
+| 5 | Legendary pull | [Райтап](./Legendary-pull/) |
+| 6 | Minute of fame | [Райтап](./Minute-of-fame/) |
+| 7 | Morning without coordinates | [Райтап](./Morning-without-coordinates/) |
+| 8 | Where is my Faculty%3F | [Райтап](./Where-is-my-Faculty/) |

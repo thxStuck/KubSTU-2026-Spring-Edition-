@@ -3,23 +3,28 @@
 > **Category:** `crypto`  
 > **CTF:** KubSTU CTF 2026 Spring
 
-<details>
-<summary>📎 Challenge files</summary>
+---
 
-| File | Type |
-|------|-----|
-| [Base.py](./files/img_1.py) | `text/x-python` |
-| [Base.txt](./files/img_4.txt) | `text/plain` |
-| [Base.txt](./files/img_5.txt) | `text/plain` |
+We intercepted a strange message. It seems to be encoded using a popular method. Help us figure out what it says.  
+Flag format KubSTU()
 
-</details>
+[Base.txt](./files/Base.txt)
 
 ---
 
-We intercepted a strange message. It seems to be encoded with a popular method. Help us figure out what it says. Flag format KubSTU()
+Solution:
+The structure of the string and the challenge name itself practically scream that this is a base encoding — all that's left is to try its variations.
+Only base64 turned out to be valid.
 
-Solution: The structure of the string and the challenge name itself practically scream that this is a base encoding — all that's left is to try different variants. The only valid one turns out to be base64.
 
-![image.png](./images/img_2.png)
+ ![img_1.png](./images/img_1.png)
+
+
+ ![img_2.png](./images/img_2.png)
+
+
+[Base.py](./files/Base.py)
 
 Flag: KubSTU(b4s3_64_1s_the_ba5i5)
+
+

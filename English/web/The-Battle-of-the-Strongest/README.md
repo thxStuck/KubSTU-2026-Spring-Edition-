@@ -3,57 +3,101 @@
 > **Category:** `web`  
 > **CTF:** KubSTU CTF 2026 Spring
 
-<details>
-<summary>📎 Challenge files</summary>
+---
 
-| File | Type |
-|------|-----|
-| [The_Battle_of_the_Strongest.rar](./files/img_1.rar) | `application/x-compressed` |
+## Legend
 
-</details>
+  
+
+Every semester, capybara students argue about which faculty is better, who's stronger academically, who's more active in student life.
+
+This year, enthusiast capybaras decided to take the rivalry digital and created an innovative service **"The Battle of the Strongest"**. But it seems like the service isn't the most secure one.
+
+
+Challenge files
+
+[The_Battle_of_the_Strongest.rar](./files/The_Battle_of_the_Strongest.rar)
 
 ---
 
-Lore:
+We go to the service and register.
 
-Every semester, capybara students argue about which faculty is better, who's stronger in academics, who's more active in student life.
+We're taken to the main page.
 
-This year, enthusiast capybaras decided to take the rivalry digital and created an innovative service **"The Battle of the Strongest"**. Only it seems like it's not the most secure service.
 
-Challenge files:
-We go to the service and register. We get transferred to the main page.
+ ![img_1.png](./images/img_1.png)
 
-![image.png](./images/img_2.png)
 
-The challenge is that several teams join and can choose the number of likes that will be counted at the end of the round.
+The point of the challenge is that several teams log in and can choose the number of likes that will be at the end of the round.
+
+
+ ![img_2.png](./images/img_2.png)
 
 I set 12.
-We go and see 0.
 
-If we press like:
+We navigate and see 0.
 
-and the button turns red.
-If we press to remove — it goes to -1.
-OK. Let's catch the request.
 
-![image.png](./images/img_3.png)
+ ![img_3.png](./images/img_3.png)
+
+If we click like:
+
+
+ ![img_4.png](./images/img_4.png)
+
+The button turns red.
+
+If we click remove, it becomes -1.
+
+Okay. Let's catch the request.
+
+
+ ![img_5.png](./images/img_5.png)
+
 
 We notice that if we send it a second time — the server accepts it. The check is only on the client side.
 
-![image.png](./images/img_4.png)
 
-We spam until we reach the needed number, which is 12.
+ ![img_6.png](./images/img_6.png)
 
-![image.png](./images/img_5.png)
 
-We overdid it, try to decrease.
+We spam until the desired number — which is 12 for us.
 
-We try.
+
+ ![img_7.png](./images/img_7.png)
+
+
+We overshot — let's try to decrease.
+
+
+ ![img_8.png](./images/img_8.png)
+
+Let's try.
+
+
+ ![img_9.png](./images/img_9.png)
 
 And we get 12.
 
-We wait for the time to end and make sure the like count stays at the required number. In practice, at the start of the CTF there will naturally be competition, and logic and good botnets will win.
 
-We go to our profile.
+ ![img_10.png](./images/img_10.png)
 
+We wait for the time to expire and make sure the number of likes stays at the desired amount. 
+
+In practice, at the beginning of the CTF there will naturally be competition, and logic and good botnets will win.
+
+
+ ![img_11.png](./images/img_11.png)
+
+We go to the profile page.
+
+
+ ![img_12.png](./images/img_12.png)
+
+---
+
+```javascript
 KubSTU(Y0u_ar3_champ10n)
+```
+
+
